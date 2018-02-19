@@ -24,6 +24,18 @@ function chunk(array, size) {
 	}
 	return allNums
 
+
+	//Shorter Solution #1.5
+	/*
+	const allNums= [];
+	let index= 0;
+
+	while(index < array.length) {
+		allNums.push(array.slice(index, index +size));
+		index += size;
+	}
+	*/
+	
 	//Soultion #2
 /*	let allNums= []
 	for(let num of array) {
