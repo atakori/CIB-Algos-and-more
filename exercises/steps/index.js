@@ -17,8 +17,8 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-	for(let i=0; i<n;i++) {
+function steps(n, i=0, stairs= '') {
+	/*for(let i=0; i<n;i++) {
 		let stairs= '';
 		for(let j=0; j<n; j++) {
 			if(j <= i) {
@@ -28,7 +28,23 @@ function steps(n) {
 			}
 		}
 		console.log(stairs)
+	}*/
+	//Solution #2
+	if(n === i) {
+		return
 	}
+
+	if(n === stairs.length) {
+		console.log(stairs)
+		return steps(n, i+1);
+	}
+
+	if(stairs.length <= i) {
+		stairs += '#';
+	} else {
+		stairs += ' ';
+	}
+	steps(n, i, stairs)
 }
 
 
