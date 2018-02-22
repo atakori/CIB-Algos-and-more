@@ -17,20 +17,24 @@
 //       '### '
 //       '####'
 
-function steps(n, i=0, stairs= '') {
-	/*for(let i=0; i<n;i++) {
+function steps(n) {
+	for(let i=0; i<n; i++) {
 		let stairs= '';
-		for(let j=0; j<n; j++) {
-			if(j <= i) {
-				stairs += '#';	
+		for(j=0; j<n;j++) {
+			if(j <=i) {
+				stairs += '#'
 			} else {
-				stairs+= ' ';
+				stairs += ' '
 			}
 		}
 		console.log(stairs)
-	}*/
+	}
+}
+
+
 	//Solution #2
-	if(n === i) {
+/*	function steps(n, i=0, stairs= '') {*/
+/*	if(n === i) {
 		return
 	}
 
@@ -45,7 +49,7 @@ function steps(n, i=0, stairs= '') {
 		stairs += ' ';
 	}
 	steps(n, i, stairs)
-}
+}*/
 
 
 module.exports = steps;
