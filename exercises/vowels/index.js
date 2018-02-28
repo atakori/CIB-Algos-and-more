@@ -19,7 +19,7 @@ function vowels(str) {
 	return vowelCount;
 */
 	//Solution #2
-	let vowelCount= 0;
+/*	let vowelCount= 0;
 	const vowelLetters= ['a','e', 'i','o','u'];
 
 	for(let char of str.toLowerCase()) {
@@ -27,7 +27,11 @@ function vowels(str) {
 			vowelCount++
 		}
 	}
-	return vowelCount;
+	return vowelCount;*/
+
+	//Solution #3
+	const matches= str.match(/[aeiou]/gi);
+	return matches ? matches.length : 0
 }
 
 module.exports = vowels;
