@@ -9,8 +9,9 @@
 //   fib(4) === 3
 
 function fib(n) {
-	let arr= [0,1];
-	for(let i=2; i<=n; i++) {
+	//solution #1
+/*	let arr= [0,1];
+	for(let i=2; i<=n; i++) {*/
 /*		if(i=0) {
 			result= 0;
 			arr.push(result)
@@ -19,10 +20,16 @@ function fib(n) {
 			result=1;
 			arr.push(result)
 		}*/
-		const result= arr[i-1] + arr[i -2]
+/*		const result= arr[i-1] + arr[i -2]
 		arr.push(result)
 	}
-	return arr[n];
+	return arr[n];*/
+
+	//Solution #2 (recursion)
+	if(n<2) {
+		return n;
+	}
+	return fib(n-1) + fib(n-2);
 }
 
 module.exports = fib;
