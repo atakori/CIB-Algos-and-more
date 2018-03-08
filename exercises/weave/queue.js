@@ -18,8 +18,9 @@ class Queue {
   }
 
   peek() {
-  	return this.data[this.data.length-1]
+    return this.data[this.data.length-1];
   }
+
 }
 
 module.exports = Queue;
