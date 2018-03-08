@@ -14,6 +14,48 @@
 
 const Stack = require('./stack');
 
-class Queue {}
+class Queue {
+	constructor() {
+		this.first= new Stack();
+		this.second= new Stack();
+	}
+
+	add(record) {
+		this.first.push(record)
+	}
+
+	remove(){
+		//if there is still something inside
+		while(this.first.peek()) {
+			const recordA = this.first.pop();
+			this.second.push(recordA);
+		}
+
+		//get the record that we want
+		const lastRecord= this.second.pop();
+
+		while(this.second.peek()){
+			const recordB = this.second.pop();
+			this.first.push(recordB);
+		}
+
+		return lastRecord;
+	}
+
+	peek(){
+		while(this.first.peek()){
+			const recordA= this.first.pop();
+			this.second.push(recordA)
+		}
+		const peekedItem= this.second.peek()
+
+		while(this.second.peek()) {
+			const recordB= this.second.pop();
+			this.first.push(recordB);
+		}
+
+		return peekedItem;
+	}
+}
 
 module.exports = Queue;
