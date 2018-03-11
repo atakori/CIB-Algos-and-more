@@ -14,7 +14,7 @@ class LinkedList {
 		this.head= null;
 	}
 
-	insertFirst(data) {
+	insertFirst(data /*,this.head*/) {
 		let newNode= new Node(data)
 		if(this.head === null) {
 			this.head= newNode;
@@ -24,6 +24,23 @@ class LinkedList {
 			this.head = newNode;
 			newNode.next = firstNode;
 		}
+	}
+	/*OR  this.head= newNode(data, this.head)*/
+
+	size() {
+		//returns the number of nodes in list
+		let counter= 0;
+		let currentNode= this.head;
+		while(currentNode) {
+			currentNode= currentNode.next;
+			counter++;
+		}
+
+		return counter;
+	}
+
+	getFirst() {
+		return this.head;
 	}
 }
 
