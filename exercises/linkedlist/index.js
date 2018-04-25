@@ -14,33 +14,46 @@ class LinkedList {
 		this.head= null;
 	}
 
-	insertFirst(data /*,this.head*/) {
-		let newNode= new Node(data)
-		if(this.head === null) {
-			this.head= newNode;
-		} else {
-			//switch places with the newNode and the "first" node
+	insertFirst(data) {
+		let currentNode = new Node(data);
+		if(this.head) {
+			//need to switch head and currentNode
 			let firstNode = this.head;
-			this.head = newNode;
-			newNode.next = firstNode;
+			currentNode.next = firstNode;
+			this.head = currentNode;
+		} else {
+			this.head = currentNode;
 		}
 	}
+
 	/*OR  this.head= newNode(data, this.head)*/
 
 	size() {
-		//returns the number of nodes in list
-		let counter= 0;
-		let currentNode= this.head;
+		//returns the number of nodes in a linkedList
+		let counter = 0;
+		let currentNode= this.head; 
 		while(currentNode) {
-			currentNode= currentNode.next;
 			counter++;
+			currentNode = currentNode.next;
 		}
-
 		return counter;
 	}
 
 	getFirst() {
 		return this.head;
+	}
+
+	getLast() {
+		if(!this.head) {
+			return null;
+		}
+		//start from top, iterate through list
+		//return final value
+		let currentNode = this.head;
+		while(currentNode.next) {
+			currentNode = currentNode.next
+		}
+		return currentNode;
 	}
 }
 
