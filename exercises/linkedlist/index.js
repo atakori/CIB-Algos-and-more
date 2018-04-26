@@ -64,8 +64,28 @@ class LinkedList {
 		if(!this.head) {
 			return;
 		}
+		//reassign head
 		let firstNode = this.head;
 		this.head = firstNode.next;
+	}
+
+	removeLast() {
+		if(!this.head) {
+			return null;
+		}
+
+		if(!this.head.next) {
+			this.head = null;
+			return;
+		}
+
+		let node = this.head;
+		while(node.next.next) {
+			node = node.next;
+		}
+
+		node.next = null;
+		return;
 	}
 }
 
